@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "Application";
+}
+@model Mission6_Twilso48.Models.applicationResponse
+
+<h1>Fill out the application Buddy</h1>
+
+<div>
+    <form method="post">
+        <label asp-for="Name">First Name: </label>
+        <input asp-for="Name" />
+
+
+        <label asp-for="LastName">Last Name: </label>
+        <input asp-for="LastName" />
+
+        <label asp-for="age">Age</label>
+        <input asp-for="age" />
+
+
+        <label asp-for="phone">Phone: </label>
+        <input asp-for="phone" />
+
+
+        <label asp-for="Major">Major: </label>
+        <input asp-for="Major" />
+
+        <label asp-for="Stalker">Stalker: </label>
+        <select asp-for="Stalker">
+            <option value="true">Yes</option>
+            <option value="false">no</option>
+        </select><br />
+
+        <button type="submit">Sumbit the form</button>
+    </form>
+</div>
