@@ -30,12 +30,14 @@ namespace Mission6_Twilso48.Controllers
         {
             return View();
         }
-
+        //get page route
         [HttpGet]
         public IActionResult Movie()
         {
             return View();
         }
+
+        //post page route
         [HttpPost]
         public IActionResult Movie(applicationResponse ar)
         {

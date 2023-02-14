@@ -11,7 +11,7 @@ namespace Mission6_Twilso48.Models
         //constructor 
         public context(DbContextOptions<context> options): base (options)
         {
-
+            Database.EnsureCreated();
         }
         public DbSet<applicationResponse> response { get; set; }
 
