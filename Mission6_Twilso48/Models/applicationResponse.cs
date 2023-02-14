@@ -10,6 +10,7 @@ namespace Mission6_Twilso48.Models
 {
     public class applicationResponse
     {
+        //add required fields and make Movie ID a key
         [Key]
         [Required]
         public int MovieID { get; set; }

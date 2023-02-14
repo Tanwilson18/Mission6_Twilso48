@@ -20,12 +20,12 @@ namespace Mission6_Twilso48.Controllers
             _logger = logger;
             blahcontext = someName;
         }
-
+        //index route 
         public IActionResult Index()
         {
             return View();
         }
-
+        // podcast route
         public IActionResult Podcast()
         {
             return View();

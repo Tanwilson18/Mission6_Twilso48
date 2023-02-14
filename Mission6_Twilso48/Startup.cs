@@ -26,7 +26,7 @@ namespace Mission6_Twilso48
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
+            // add database to startup
             services.AddDbContext<context>(options =>
             {
                 options.UseSqlite(Configuration["ConnectionStrings:blahconnection"]);
