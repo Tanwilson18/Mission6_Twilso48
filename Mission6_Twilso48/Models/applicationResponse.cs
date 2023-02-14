@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
+
+// behind the scense for the database
 namespace Mission6_Twilso48.Models
 {
     public class applicationResponse

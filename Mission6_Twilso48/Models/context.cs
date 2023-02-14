@@ -15,7 +15,7 @@ namespace Mission6_Twilso48.Models
         }
         public DbSet<applicationResponse> response { get; set; }
 
-
+        // seeding the database with data below
         protected override void OnModelCreating(ModelBuilder mb)
         {
             mb.Entity<applicationResponse>().HasData(

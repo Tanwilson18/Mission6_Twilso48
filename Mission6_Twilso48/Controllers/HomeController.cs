@@ -36,7 +36,8 @@ namespace Mission6_Twilso48.Controllers
         {
             return View();
         }
-        public IActionResult application(applicationResponse ar)
+        [HttpPost]
+        public IActionResult Movie(applicationResponse ar)
         {
             blahcontext.Add(ar);
             blahcontext.SaveChanges();
