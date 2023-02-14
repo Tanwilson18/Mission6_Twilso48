@@ -10,15 +10,20 @@ namespace Mission6_Twilso48.Models
     {
         [Key]
         [Required]
-        public int MovieId { get; set; }
-        public string Name { get; set; }
-        public string LastName { get; set; }
-        public byte age { get; set; }
-        public string phone { get; set; }
-        public string Major { get; set; }
-        public bool Stalker { get; set; }
-
-
-
+        public int MovieID { get; set; }
+        [Required]
+        public string Category { get; set; }
+        [Required]
+        public string Title { get; set; }
+        [Required]
+        public int Year { get; set; }
+        [Required]
+        public string Director { get; set; }
+        [Required]
+        public string Rating { get; set; }
+        public string Edited { get; set; }
+        public string LentTo { get; set; }
+        [MaxLength(25)]
+        public string Notes { get; set; }
     }
 }

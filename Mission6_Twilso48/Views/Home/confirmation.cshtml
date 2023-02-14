@@ -1,14 +1,6 @@
 ﻿@{
-    ViewData["Title"] = "Application Sumbitted";
+    ViewData["Title"] = "Confirmation Page";
 }
-@model Mission6_Twilso48.Models.applicationResponse
-
-@if (Model.Stalker == true)
-{
-    <h3>sorry I dont want to go out with you</h3>
-}
-else
-{
-
-    <h2>Application received. Thank you @Model.Name</h2>
-}
+<h3>@Model.Title Added</h3>
+<br />
+<a asp-controller="Home" asp-action="Movie">Add Another One</a>
