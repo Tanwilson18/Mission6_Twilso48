@@ -8,7 +8,7 @@ using Mission6_Twilso48.Models;
 namespace Mission6_Twilso48.Migrations
 {
     [DbContext(typeof(context))]
-    [Migration("20230214165633_intial")]
+    [Migration("20230214173337_intial")]
     partial class intial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,7 +54,7 @@ namespace Mission6_Twilso48.Migrations
 
                     b.HasKey("MovieID");
 
-                    b.ToTable("response");
+                    b.ToTable("Responses");
 
                     b.HasData(
                         new

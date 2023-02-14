@@ -52,7 +52,7 @@ namespace Mission6_Twilso48.Migrations
 
                     b.HasKey("MovieID");
 
-                    b.ToTable("response");
+                    b.ToTable("Responses");
 
                     b.HasData(
                         new

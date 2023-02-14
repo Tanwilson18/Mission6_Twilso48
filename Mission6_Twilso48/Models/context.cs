@@ -12,7 +12,7 @@ namespace Mission6_Twilso48.Models
         public context(DbContextOptions<context> options): base (options)
         {
         }
-        public DbSet<applicationResponse> response { get; set; }
+        public DbSet<applicationResponse> Responses { get; set; }
 
         // seeding the database with data below
         protected override void OnModelCreating(ModelBuilder mb)

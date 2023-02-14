@@ -7,7 +7,7 @@ namespace Mission6_Twilso48.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "response",
+                name: "Responses",
                 columns: table => new
                 {
                     MovieID = table.Column<int>(nullable: false)
@@ -23,21 +23,21 @@ namespace Mission6_Twilso48.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_response", x => x.MovieID);
+                    table.PrimaryKey("PK_Responses", x => x.MovieID);
                 });
 
             migrationBuilder.InsertData(
-                table: "response",
+                table: "Responses",
                 columns: new[] { "MovieID", "Category", "Director", "Edited", "LentTo", "Notes", "Rating", "Title", "Year" },
                 values: new object[] { 1, "Family", "John Lasseter", null, null, "Best Movie Ever", "G", "Cars", 2006 });
 
             migrationBuilder.InsertData(
-                table: "response",
+                table: "Responses",
                 columns: new[] { "MovieID", "Category", "Director", "Edited", "LentTo", "Notes", "Rating", "Title", "Year" },
                 values: new object[] { 2, "Action", "Cary Joji Fukunaga", null, null, "Enough to make a man cry", "PG-13", "007: No Time to Die", 2021 });
 
             migrationBuilder.InsertData(
-                table: "response",
+                table: "Responses",
                 columns: new[] { "MovieID", "Category", "Director", "Edited", "LentTo", "Notes", "Rating", "Title", "Year" },
                 values: new object[] { 3, "Family", "John Lasseter", null, null, "Not as good as the first", "G", "Cars 2", 2011 });
         }
@@ -45,7 +45,7 @@ namespace Mission6_Twilso48.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "response");
+                name: "Responses");
         }
     }
 }
