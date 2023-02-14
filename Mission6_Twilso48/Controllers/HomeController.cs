@@ -26,17 +26,21 @@ namespace Mission6_Twilso48.Controllers
             return View();
         }
 
-        [HttpGet]
-        public IActionResult application()
+        public IActionResult Podcast()
         {
             return View();
         }
-        [HttpPost]
+
+        [HttpGet]
+        public IActionResult Movie()
+        {
+            return View();
+        }
         public IActionResult application(applicationResponse ar)
         {
             blahcontext.Add(ar);
             blahcontext.SaveChanges();
-            return View("confirmation", ar);
+            return View("Confirmation", ar);
         }
         public IActionResult Privacy()
         {
