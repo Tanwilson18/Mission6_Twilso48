@@ -8,8 +8,8 @@ using Mission6_Twilso48.Models;
 namespace Mission6_Twilso48.Migrations
 {
     [DbContext(typeof(context))]
-    [Migration("20230214162417_movies")]
-    partial class movies
+    [Migration("20230214165633_intial")]
+    partial class intial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

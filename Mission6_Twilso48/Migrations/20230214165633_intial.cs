@@ -2,7 +2,7 @@
 
 namespace Mission6_Twilso48.Migrations
 {
-    public partial class movies : Migration
+    public partial class intial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
