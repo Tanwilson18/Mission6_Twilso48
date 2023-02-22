@@ -15,9 +15,8 @@ namespace Mission6_Twilso48.Controllers
         private readonly ILogger<HomeController> _logger;
         private context blahcontext { get; set; }
 
-        public HomeController(ILogger<HomeController> logger, context someName)
+        public HomeController( context someName)
         {
-            _logger = logger;
             blahcontext = someName;
         }
         //index route 
@@ -45,15 +44,11 @@ namespace Mission6_Twilso48.Controllers
             blahcontext.SaveChanges();
             return View("Confirmation", ar);
         }
-        public IActionResult Privacy()
+        [HttpGet]
+        public IActionResult WaitList()
         {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var applications = blahcontext.Responses.OrderBy(x => x.Title).ToList();
+            return View(applications);
         }
     }
 }

@@ -13,15 +13,25 @@ namespace Mission6_Twilso48.Models
         {
         }
         public DbSet<applicationResponse> Responses { get; set; }
+        public DbSet<Category> Category { get; set; }
 
         // seeding the database with data below
         protected override void OnModelCreating(ModelBuilder mb)
         {
+            mb.Entity<Category>().HasData(
+                new Category { CategoryID = 1, CategoryName = "Action" },
+                new Category { CategoryID = 2, CategoryName = "Family" },
+                new Category { CategoryID = 3, CategoryName = "Adventure" },
+                new Category { CategoryID = 4, CategoryName = "Thriller" }
+
+
+                );
+             
             mb.Entity<applicationResponse>().HasData(
                 new applicationResponse
                 {
                     MovieID = 1,
-                    Category = "Family",
+                    CategoryID = 1,
                     Title = "Cars",
                     Year = 2006,
                     Director = "John Lasseter",
@@ -31,7 +41,7 @@ namespace Mission6_Twilso48.Models
                 new applicationResponse
                 {
                     MovieID = 2,
-                    Category = "Action",
+                    CategoryID = 2,
                     Title = "007: No Time to Die",
                     Year = 2021,
                     Director = "Cary Joji Fukunaga",
@@ -41,7 +51,7 @@ namespace Mission6_Twilso48.Models
                 new applicationResponse
                 {
                     MovieID = 3,
-                    Category = "Family",
+                    CategoryID = 3,
                     Title = "Cars 2",
                     Year = 2011,
                     Director = "John Lasseter",

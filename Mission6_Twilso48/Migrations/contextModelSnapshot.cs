@@ -15,15 +15,28 @@ namespace Mission6_Twilso48.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.30");
 
+            modelBuilder.Entity("Mission6_Twilso48.Models.Category", b =>
+                {
+                    b.Property<int>("CategoryID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("CategoryName")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("CategoryID");
+
+                    b.ToTable("Category");
+                });
+
             modelBuilder.Entity("Mission6_Twilso48.Models.applicationResponse", b =>
                 {
                     b.Property<int>("MovieID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<int>("CategoryID")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Director")
                         .IsRequired()
@@ -52,13 +65,15 @@ namespace Mission6_Twilso48.Migrations
 
                     b.HasKey("MovieID");
 
+                    b.HasIndex("CategoryID");
+
                     b.ToTable("Responses");
 
                     b.HasData(
                         new
                         {
                             MovieID = 1,
-                            Category = "Family",
+                            CategoryID = 1,
                             Director = "John Lasseter",
                             Notes = "Best Movie Ever",
                             Rating = "G",
@@ -68,7 +83,7 @@ namespace Mission6_Twilso48.Migrations
                         new
                         {
                             MovieID = 2,
-                            Category = "Action",
+                            CategoryID = 2,
                             Director = "Cary Joji Fukunaga",
                             Notes = "Enough to make a man cry",
                             Rating = "PG-13",
@@ -78,13 +93,22 @@ namespace Mission6_Twilso48.Migrations
                         new
                         {
                             MovieID = 3,
-                            Category = "Family",
+                            CategoryID = 3,
                             Director = "John Lasseter",
                             Notes = "Not as good as the first",
                             Rating = "G",
                             Title = "Cars 2",
                             Year = 2011
                         });
+                });
+
+            modelBuilder.Entity("Mission6_Twilso48.Models.applicationResponse", b =>
+                {
+                    b.HasOne("Mission6_Twilso48.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
