@@ -27,6 +27,28 @@ namespace Mission6_Twilso48.Migrations
                     b.HasKey("CategoryID");
 
                     b.ToTable("Category");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryID = 1,
+                            CategoryName = "Action"
+                        },
+                        new
+                        {
+                            CategoryID = 2,
+                            CategoryName = "Family"
+                        },
+                        new
+                        {
+                            CategoryID = 3,
+                            CategoryName = "Adventure"
+                        },
+                        new
+                        {
+                            CategoryID = 4,
+                            CategoryName = "Thriller"
+                        });
                 });
 
             modelBuilder.Entity("Mission6_Twilso48.Models.applicationResponse", b =>

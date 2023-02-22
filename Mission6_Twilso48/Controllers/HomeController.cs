@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 using Mission6_Twilso48.Models;
 using System;
 using System.Collections.Generic;
@@ -33,6 +34,8 @@ namespace Mission6_Twilso48.Controllers
         [HttpGet]
         public IActionResult Movie()
         {
+            ViewBag.Category = blahcontext.Category.ToList();
+
             return View();
         }
 
@@ -47,7 +50,8 @@ namespace Mission6_Twilso48.Controllers
         [HttpGet]
         public IActionResult WaitList()
         {
-            var applications = blahcontext.Responses.OrderBy(x => x.Title).ToList();
+            var applications = blahcontext.Responses.Include(y =>y.Category)
+                .OrderBy(x => x.Title).ToList();
             return View(applications);
         }
     }

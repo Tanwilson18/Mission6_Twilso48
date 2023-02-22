@@ -2,7 +2,7 @@
 
 namespace Mission6_Twilso48.Migrations
 {
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -44,6 +44,26 @@ namespace Mission6_Twilso48.Migrations
                         principalColumn: "CategoryID",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Category",
+                columns: new[] { "CategoryID", "CategoryName" },
+                values: new object[] { 1, "Action" });
+
+            migrationBuilder.InsertData(
+                table: "Category",
+                columns: new[] { "CategoryID", "CategoryName" },
+                values: new object[] { 2, "Family" });
+
+            migrationBuilder.InsertData(
+                table: "Category",
+                columns: new[] { "CategoryID", "CategoryName" },
+                values: new object[] { 3, "Adventure" });
+
+            migrationBuilder.InsertData(
+                table: "Category",
+                columns: new[] { "CategoryID", "CategoryName" },
+                values: new object[] { 4, "Thriller" });
 
             migrationBuilder.InsertData(
                 table: "Responses",

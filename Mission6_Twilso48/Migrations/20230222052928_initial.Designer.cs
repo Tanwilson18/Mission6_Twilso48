@@ -8,8 +8,8 @@ using Mission6_Twilso48.Models;
 namespace Mission6_Twilso48.Migrations
 {
     [DbContext(typeof(context))]
-    [Migration("20230222052004_Initial")]
-    partial class Initial
+    [Migration("20230222052928_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,6 +29,28 @@ namespace Mission6_Twilso48.Migrations
                     b.HasKey("CategoryID");
 
                     b.ToTable("Category");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryID = 1,
+                            CategoryName = "Action"
+                        },
+                        new
+                        {
+                            CategoryID = 2,
+                            CategoryName = "Family"
+                        },
+                        new
+                        {
+                            CategoryID = 3,
+                            CategoryName = "Adventure"
+                        },
+                        new
+                        {
+                            CategoryID = 4,
+                            CategoryName = "Thriller"
+                        });
                 });
 
             modelBuilder.Entity("Mission6_Twilso48.Models.applicationResponse", b =>
