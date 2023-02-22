@@ -54,5 +54,15 @@ namespace Mission6_Twilso48.Controllers
                 .OrderBy(x => x.Title).ToList();
             return View(applications);
         }
+
+        public IActionResult Edit()
+        {
+            return View();
+        }
+
+        public IActionResult Delete()
+        {
+            return View();
+        }
     }
 }
