@@ -55,9 +55,13 @@ namespace Mission6_Twilso48.Controllers
             return View(applications);
         }
 
-        public IActionResult Edit()
+        public IActionResult Edit(int movieid)
         {
-            return View();
+            ViewBag.Category = blahcontext.Category.ToList();
+
+            var application = blahcontext.Responses.Single(x => x.MovieID == movieid);
+
+            return View("Movie", application);
         }
 
         public IActionResult Delete()
