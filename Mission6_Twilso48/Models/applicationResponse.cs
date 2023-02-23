@@ -15,7 +15,7 @@ namespace Mission6_Twilso48.Models
         [Required]
         public int MovieID { get; set; }
   
-        [Required]
+        [Required(ErrorMessage="Enter Movie Title!")]
         public string Title { get; set; }
         [Required]
         public int Year { get; set; }

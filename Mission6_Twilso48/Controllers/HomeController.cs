@@ -43,9 +43,19 @@ namespace Mission6_Twilso48.Controllers
         [HttpPost]
         public IActionResult Movie(applicationResponse ar)
         {
-            blahcontext.Add(ar);
-            blahcontext.SaveChanges();
-            return View("Confirmation", ar);
+            if (ModelState.IsValid)
+            {
+
+                blahcontext.Add(ar);
+                blahcontext.SaveChanges();
+                return View("Confirmation", ar);
+            }
+            else //if invalid
+            {
+                ViewBag.Category = blahcontext.Category.ToList();
+
+                return View();
+            }
         }
         [HttpGet]
         public IActionResult WaitList()
@@ -64,9 +74,31 @@ namespace Mission6_Twilso48.Controllers
             return View("Movie", application);
         }
 
-        public IActionResult Delete()
+        [HttpPost]
+
+        public IActionResult Edit(applicationResponse blah)
         {
-            return View();
+           
+            blahcontext.Update(blah);
+            blahcontext.SaveChanges();
+
+            return RedirectToAction("WaitList"); 
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int movieid)
+        {
+            var movie = blahcontext.Responses.Single( x => x.MovieID == movieid);
+            return View(movie);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(applicationResponse ar)
+        {
+            blahcontext.Responses.Remove(ar);
+            blahcontext.SaveChanges();
+            
+            return RedirectToAction("WaitList");
         }
     }
 }
